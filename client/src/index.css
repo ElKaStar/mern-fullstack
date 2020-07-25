@@ -1,0 +1,16 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+input.input-adj{
+    border-bottom: 1px solid darkgray!important;
+    box-shadow: 0 1px 0 0 white!important;
+}
+input.input-adj +label {
+   color: white!important;
+}
+input.input-adj:focus +label {
+    color: rebeccapurple!important;
+}
+input.input-adj:focus {
+    border-bottom: 1px solid rebeccapurple!important;
+    box-shadow: 0 1px 0 0 rebeccapurple!important;
+}

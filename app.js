@@ -5,9 +5,11 @@ const mongoose = require('mongoose')
 
 //app is server
 const app = express()
+app.use(express.json({ extended: true}))
+app.use('/api/auth', require('./routes/auth.routes'))
+
 const PORT = config.get('port') || 5000
 
-app.use('/api/auth', require('./routes/auth.routes'))
 
 async function start() {
     try {
