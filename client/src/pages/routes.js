@@ -4,6 +4,7 @@ import {CreatePage} from "./CreatePage";
 import {DetailedPage} from "./DetailedPage";
 import {Redirect, Route, Switch} from "react-router-dom";
 import {AuthPage} from "./AuthPage";
+import {NotesPage} from "./Notes";
 
 
 
@@ -21,6 +22,9 @@ export const useRoutes = (isAuth) => {
                 </Route>
                 <Route path="/detail/:id">
                     <DetailedPage />
+                </Route>
+                <Route path="/notes">
+                    <NotesPage />
                 </Route>
                 <Redirect to="/create" />
             </Switch>

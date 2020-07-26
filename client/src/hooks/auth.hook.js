@@ -2,6 +2,7 @@ import {useCallback, useEffect, useState} from "react";
 
 
 export const useAuth = () => {
+    const [init, setInit] = useState(false)
     const [token, setToken] = useState(null)
     const [userId, setUserId] = useState(null)
 
@@ -22,8 +23,8 @@ export const useAuth = () => {
         if (data && data.token) {
             login(data.token, data.userId)
         }
-
+        setInit(true)
     }, [login])
 
-    return {login, logout, token, userId}
+    return {login, logout, token, userId, init}
 }

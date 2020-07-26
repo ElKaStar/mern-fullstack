@@ -17,6 +17,10 @@ export const AuthPage = () => {
         clearError()
     }, [error, message, clearError])
 
+    useEffect( () => {
+        window.M.updateTextFields()
+    })
+
     const changeHandler = (event) => {
         setForm({
             ...form,
@@ -43,7 +47,11 @@ export const AuthPage = () => {
 return (
     <div className="row">
         <div className="col s6 offset-s3">
-            <h1>Cut the link</h1>
+            <nav>
+                <div className="nav-wrapper white" style={{marginTop: 10}}>
+                    <span className="brand-logo center black-text">Welcome</span>
+                </div>
+            </nav>
             <div className="card blue-grey darken-1">
                 <div className="card-content white-text">
                     <span className="card-title">Authorization</span>
@@ -56,9 +64,11 @@ return (
                                 type="text"
                                 className="validate"
                                 name="email"
+                                value={form.email}
                                 onChange={changeHandler}
                             />
-                                <label htmlFor="email">Email</label>
+                            <label htmlFor="autocomplete-input">Email</label>
+
                         </div>
                         <div className="input-field">
                             <input
@@ -67,9 +77,11 @@ return (
                                 type="password"
                                 className="validate"
                                 name="password"
+                                value={form.password}
                                 onChange={changeHandler}
                             />
-                                <label htmlFor="password">Password</label>
+                            <label htmlFor="autocomplete-input">Password</label>
+
                         </div>
 
                     </div>
